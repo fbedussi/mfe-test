@@ -35,7 +35,7 @@ module.exports = {
     path:path.resolve(__dirname, "dist"),
   },
   devServer: {
-    port: 3102,
+    port: process.env.MFE ? 3102 : 3202,
   },
   module: {
     rules: [

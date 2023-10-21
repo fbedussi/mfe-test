@@ -1,0 +1,24 @@
+{
+  "name": "mfe-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:shell": "cd ./shell && npm start",
+    "start:catalog": "cd ./catalog && npm run start:mfe",
+    "start:cart": "cd ./cart && npm run start:mfe",
+    "start": "npm run start:shell & npm run start:catalog & npm run start:cart",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fbedussi/mfe-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fbedussi/mfe-test/issues"
+  },
+  "homepage": "https://github.com/fbedussi/mfe-test#readme"
+}
