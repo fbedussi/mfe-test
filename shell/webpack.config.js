@@ -8,6 +8,9 @@ module.exports = {
   output: {
     path:path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    port: 3100,
+  },
   module: {
     rules: [
       {
@@ -29,7 +32,18 @@ module.exports = {
     new ModuleFederationPlugin({
         name: 'Shell',
         remotes: {
-            Catalog:
+            Catalog: 'Catalog@http://localhost:3101/remoteEntry.js',
+            Cart: 'Cart@http://localhost:3102/remoteEntry.js',
+            // you can also use remote urls
+            // SignIn: "SignIn@http://d21ugy3cbs42qx.cloudfront.net/signin/remoteEntry.js"
+        },
+        shared: {
+          react: {
+            singleton: true,
+          },
+          'react-dom': {
+            singleton: true,
+          }
         }
     })
   ],
