@@ -37,6 +37,7 @@ module.exports = {
             FeaturedProduct: 'FeaturedProduct@http://localhost:3101/remoteEntry.js',
             Catalog: 'Catalog@http://localhost:3101/remoteEntry.js',
             Cart: 'Cart@http://localhost:3102/remoteEntry.js',
+            MiniCart: 'MiniCart@http://localhost:3102/remoteEntry.js',
             // you can also use remote urls
             // SignIn: "SignIn@http://d21ugy3cbs42qx.cloudfront.net/signin/remoteEntry.js"
         },

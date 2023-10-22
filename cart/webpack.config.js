@@ -14,7 +14,8 @@ if (process.env.MFE) {
         name: 'Cart',
         filename: "remoteEntry.js",
         exposes: {
-          "./Cart": "./src/Cart"
+          "./Cart": "./src/Cart",
+          "./MiniCart": "./src/MiniCart",
         },
         shared: {
           react: {
