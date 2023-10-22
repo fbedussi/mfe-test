@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Home = () => {
+const Products = () => {
   return (
     <div>
       <div><Link to={`product/1`}>Product 1</Link></div>
@@ -10,4 +10,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Products

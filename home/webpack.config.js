@@ -11,11 +11,10 @@ const plugins = [
 if (process.env.MFE) {
   plugins.push(
     new ModuleFederationPlugin({
-        name: 'Catalog',
+        name: 'Home',
         filename: "remoteEntry.js",
         exposes: {
-          "./Catalog": "./src/Catalog",
-          "./FeaturedProduct": "./src/FeaturedProduct"
+          "./Home": "./src/Home"
         },
         shared: {
           react: {
@@ -26,7 +25,7 @@ if (process.env.MFE) {
           },
           'react-router-dom': {
             singleton: true,
-          } 
+          }
         }
     })
   )
@@ -39,7 +38,7 @@ module.exports = {
     path:path.resolve(__dirname, "dist"),
   },
   devServer: {
-    port: process.env.MFE ? 3101 : 3202,
+    port: process.env.MFE ? 3103 : 3203,
   },
   module: {
     rules: [

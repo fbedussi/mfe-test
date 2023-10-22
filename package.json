@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:shell": "cd ./shell && npm start",
+    "start:home": "cd ./home && npm run start:mfe",
     "start:catalog": "cd ./catalog && npm run start:mfe",
     "start:cart": "cd ./cart && npm run start:mfe",
-    "start": "npm run start:shell & npm run start:catalog & npm run start:cart",
+    "start": "npm run start:shell & npm run start:home & npm run start:catalog & npm run start:cart",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -10,6 +10,7 @@ module.exports = {
   },
   devServer: {
     port: 3100,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -32,6 +33,8 @@ module.exports = {
     new ModuleFederationPlugin({
         name: 'Shell',
         remotes: {
+            Home: 'Home@http://localhost:3103/remoteEntry.js',
+            FeaturedProduct: 'FeaturedProduct@http://localhost:3101/remoteEntry.js',
             Catalog: 'Catalog@http://localhost:3101/remoteEntry.js',
             Cart: 'Cart@http://localhost:3102/remoteEntry.js',
             // you can also use remote urls
