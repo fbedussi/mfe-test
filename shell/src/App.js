@@ -1,39 +1,25 @@
 import React from 'react'
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
 } from "react-router-dom";
 import Header from './Header';
 
 const Catalog = React.lazy(() => import("Catalog/Catalog"));
 const Cart = React.lazy(() => import("Cart/Cart"));
 
-const renderMFE = (MFE) => {
-    return(
-      <>
-        <Header />
-        <React.Suspense fallback="Loading...">
-            <MFE />
-        </React.Suspense>
-      </>
-    )
-}
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: renderMFE(Catalog),
-  },
-  {
-    path: "/cart",
-    element: renderMFE(Cart),
-  },
-]);
-
 const App = () => {
   return (
     <React.StrictMode>
-      <RouterProvider router={router}/>
+      <BrowserRouter>
+        <Header />
+      
+        <Routes>
+          <Route path="/cart" element={<React.Suspense fallback="Loading..."><Cart /></React.Suspense>} />
+          <Route path="/*" element={<React.Suspense fallback="Loading..."><Catalog /></React.Suspense>} />
+        </Routes>
+      </BrowserRouter>
     </React.StrictMode>
   )
 }
